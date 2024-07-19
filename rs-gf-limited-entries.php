@@ -2,7 +2,7 @@
 /*
 Plugin Name: RS Gravity Forms Limited Entries
 Description: Allows you to limit any Gravity Form to a single entry per user, or a set number of entries per user.
-Version: 1.0.0
+Version: 1.0.1
 Author: Radley Sustaire
 Author URI: https://radleysustaire.com/
 GitHub Plugin URI: https://github.com/RadGH/RS-Gravity-Forms-Limited-Entries
@@ -10,7 +10,7 @@ GitHub Plugin URI: https://github.com/RadGH/RS-Gravity-Forms-Limited-Entries
 
 define( 'RSLE_PATH', __DIR__ );
 define( 'RSLE_URL', untrailingslashit(plugin_dir_url(__FILE__)) );
-define( 'RSLE_VERSION', '1.0.0' );
+define( 'RSLE_VERSION', '1.0.1' );
 
 class RS_GF_Limited_Entries_Plugin {
 	

@@ -41,6 +41,10 @@ $message = apply_filters( 'rs_gf_limited_entries/get_limit_message', $message, $
 
 ## Changelog
 
+### 1.0.1
+
+* Changed to only check active entries
+
 ### 1.0.0
 
 * Initial release
