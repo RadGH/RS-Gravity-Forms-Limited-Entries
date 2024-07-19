@@ -110,6 +110,7 @@ class RS_GF_Limited_Entries_Form {
 		
 		// Search entry args
 		$search = array(
+			'status' => 'active',
 			'field_filters' => array(),
 		);
 		
