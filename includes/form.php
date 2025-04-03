@@ -180,8 +180,35 @@ class RS_GF_Limited_Entries_Form {
 			
 		}
 		
-		// Get the entries
-		$entries = GFAPI::get_entries( $form['id'], $search, $sort, $page, $total_count );
+		/**
+		 * Allow plugins to get queries directly, without performing a gravity form query ourselves
+		 * This can be used for filtering entries based on custom criteria
+		 *
+		 * @param array|null $entries
+		 * @param array $form
+		 * @param array $settings
+		 * @param int $user_id
+		 * @param array $search
+		 * @param array $sort
+		 * @param array $page
+		 */
+		$entries = apply_filters( 'rsgf_limited_entries/get_user_entries', null, $form, $settings, $user_id, $search, $sort, $page );
+		
+		if ( $entries === null ) {
+			
+			// Get the entries
+			$entries = GFAPI::get_entries( $form['id'], $search, $sort, $page, $total_count );
+			
+		}else{
+			
+			// Update total count to match the custom query
+			if ( is_array($entries) ) {
+				$total_count = count( $entries );
+			}else if ( ! empty($entries) ) {
+				$total_count = 1;
+			}
+			
+		}
 		
 		$latest_entry = false;
 		
@@ -189,7 +216,25 @@ class RS_GF_Limited_Entries_Form {
 			$latest_entry = $entries[0];
 		}
 		
-		return array( $total_count, $latest_entry );
+		$results = array( $total_count, $latest_entry );
+		
+		/**
+		 * Allow plugins to filter the results of the user's entry count
+		 *
+		 * @param array $results {
+		 *     @param int $count Index [0] = Number of entries for this user
+		 *     @param array $latest_entry Index [1] = The latest entry for this user
+		 * }
+		 * @param array $form
+		 * @param array $settings
+		 * @param int $user_id
+		 * @param array $search
+		 * @param array $sort
+		 * @param array $page
+		 */
+		$results = apply_filters( 'rsgf_limited_entries/get_user_entries_results', $results, $form, $settings, $user_id, $search, $sort, $page );
+		
+		return $results;
 	}
 	
 	// Hooks

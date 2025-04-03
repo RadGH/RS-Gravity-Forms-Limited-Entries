@@ -41,6 +41,11 @@ $message = apply_filters( 'rs_gf_limited_entries/get_limit_message', $message, $
 
 ## Changelog
 
+### 1.0.2
+
+* Added the filter `rsgf_limited_entries/get_user_entries` to allow for custom entry queries
+* Added the filter `rsgf_limited_entries/get_user_entries_results` to allow filtering the query results
+
 ### 1.0.1
 
 * Changed to only check active entries
