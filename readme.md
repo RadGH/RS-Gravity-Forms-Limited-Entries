@@ -4,11 +4,11 @@ This plugin allows you to limit any Gravity Form to a single entry per user, or 
 
 Find the setting under **Form Settings > Restrictions** after to the default "Enable entry limit" field (which does not limit by user).
 
+- [View this plugin on Zingmap.com](https://zingmap.com/plugin/rs-gravity-forms-limited-entries/)
+
 **New fields available:**
 
 ![Screenshot of the settings page showing Number of entries, User Source, and Message Type fields](screenshot-settings.png)
-
-- [View this plugin on ZingMap.com](https://zingmap.com/plugin/rs-gravity-forms-limited-entries/)
 
 ## Required Plugins
 
