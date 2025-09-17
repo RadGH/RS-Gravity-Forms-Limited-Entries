@@ -8,6 +8,8 @@ Find the setting under **Form Settings > Restrictions** after to the default "En
 
 ![Screenshot of the settings page showing Number of entries, User Source, and Message Type fields](screenshot-settings.png)
 
+- [View this plugin on ZingMap.com](https://zingmap.com/plugin/rs-gravity-forms-limited-entries/)
+
 ## Required Plugins
 
 * Gravity Forms
